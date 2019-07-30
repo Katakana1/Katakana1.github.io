@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Learning!</title>
+        <style>
+            body {
+                background: black;
+                color: white;
+                font-family: "Arial", sans-serif;
+                padding-left: 5px;
+                padding-right: 25px;
+            }
+            #click-button {
+                color: blue;
+                font-family: "Arial", sans-serif;
+                font-size: 1em;
+                border-top-color: rgb(170, 170, 170);
+                border-right-color: rgb(64, 64, 64);
+                border-bottom-color: rgb(64, 64, 64);
+                border-left-color: rgb(170, 170, 170);
+                padding: 6px;
+                border-width: 3px;
+                border-radius: 7px;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+            #click-button:hover {
+                color: white;
+                background: purple;
+                border-radius: 0px;
+            }
+            .number {
+                font-size: 2em;
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+        <script>
+            var clicks = 0;
+            var seconds = 0;
+            function clickMe() {
+                clicks++;
+                document.getElementById("clicks").textContent = clicks;
+            }
+            setInterval(function(){
+                seconds+=0.01;
+                document.getElementById("seconds").textContent = seconds.toFixed(2);
+            }, 10)
+        </script>
+    </head>
+    <body>
+    <h1>Main website</h1>
+        <p>What is this? I'm glad you didn't ask, because the answer is the heading above this paragraph. Here are some pointless statistics, because why not:</p>
+        <button id="click-button" onclick="clickMe()">I am a button. Click me.</button><br><br>
+        You have clicked the button <span id="clicks" class="number">0</span> times. <br><br>
+        You have spent <span id="seconds" class="number">0</span> seconds on this webpage.
+    </body>
+</html>
